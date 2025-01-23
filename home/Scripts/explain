@@ -1,0 +1,7 @@
+#!/bin/bash
+cmd="$(cut -d ' ' -f 1 <<< "$@" )";
+args="$(cut -d ' ' -f 2- <<< "$@" )";
+url="https://explainshell.com/explain?cmd=$cmd+$args"
+# explanation="$(curl -s $url | grep '<pre' | sed -E 's/<\/?[a-z]+(\ [a-z]+=\"[a-z0-9]+\")*>//g' | sed -E 's/^\ +//g' | sed 's/<pre class="help-box" id="help-[0-9]*">//')"
+explanation="$(curl -s $url | sed -n '/<pre/,/<\/pre>/p' | sed 's/<[^>]*>//g' | awk 'NF {if (NR>1) printf "\n"; gsub(/^ +/, ""); printf $0}')"
+echo "$explanation"

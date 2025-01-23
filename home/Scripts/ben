@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# ben run iot oreo 10
+# ben load iot native 10
+if [ "$#" -ne 4 ] && [ "$#" -ne 5 ]; then
+  echo "Usage: $0 <command> <workload> <datastore> <threads> [<mode>]"
+  exit 1
+fi
+
+command=$1
+workload=$2
+datastore=$3
+threads=$4
+mode=$5
+
+case $command in
+  run|load)
+    case $workload in
+      iot|social|order)
+        if [ -n "$mode" ]; then
+          config_file="./workloads/${workload}-${mode}.yaml"
+        else
+          config_file="./workloads/${workload}.yaml"
+        fi
+        go run . -d "$datastore" -wl "$workload" -wc "$config_file" -m "$command" -t "$threads" -ps "$datastore"
+        ;;
+      *)
+        echo "Invalid workload: $workload"
+        exit 1
+        ;;
+    esac
+    ;;
+  *)
+    echo "Invalid command: $command"
+    exit 1
+    ;;
+esac
+

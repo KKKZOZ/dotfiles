@@ -1,0 +1,9 @@
+[time]
+disabled = true
+# time_format = '%T'
+
+[battery]
+disabled = true
+
+[ruby]
+disabled = true

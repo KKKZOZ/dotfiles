@@ -1,0 +1,4 @@
+/home/.ssh/*
+!/home/.ssh/config
+!/home/.ssh/known_hosts
+!/home/.ssh/known_hosts.old

@@ -1,0 +1,13 @@
+[user]
+	name = KKKZOZ
+	email = 1206668472@qq.com
+	signingkey = /Users/kkkzoz/.ssh/id_ed25519.pub
+  
+# [http]
+#	proxy = socks5://127.0.0.1:7897
+# [https]
+#	proxy = socks5://127.0.0.1:7897
+[init]
+	defaultBranch = main
+[gpg]
+	format = ssh
