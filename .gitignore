@@ -2,3 +2,5 @@
 !/home/.ssh/config
 !/home/.ssh/known_hosts
 !/home/.ssh/known_hosts.old
+
+.DS_Store
