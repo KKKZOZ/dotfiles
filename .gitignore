@@ -3,4 +3,7 @@
 !/home/.ssh/known_hosts
 !/home/.ssh/known_hosts.old
 
+config/.config/raycast
+config/.config/karabiner/automatic_backups/
+
 .DS_Store

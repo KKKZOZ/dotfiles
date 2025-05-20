@@ -128,3 +128,15 @@ fi
 source ./Scripts/copy-paste.sh
 source ./Scripts/cdl0.sh
 # source ./Scripts/cdl.sh
+eval "$(gh copilot alias -- bash)"
+# Source the Lazyman shell initialization for aliases and nvims selector
+# shellcheck source=.config/nvim-Lazyman/.lazymanrc
+[ -f ~/.config/nvim-Lazyman/.lazymanrc ] && source ~/.config/nvim-Lazyman/.lazymanrc
+# Source the Lazyman .nvimsbind for nvims key binding
+# shellcheck source=.config/nvim-Lazyman/.nvimsbind
+[ -f ~/.config/nvim-Lazyman/.nvimsbind ] && source ~/.config/nvim-Lazyman/.nvimsbind
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/kkkzoz/.cache/lm-studio/bin"
+# End of LM Studio CLI section
+
